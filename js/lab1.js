@@ -33,7 +33,7 @@ function showTopicDetails() {
         <strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
         Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.<br><br>
         <strong>Місце розташування:</strong> <a href="https://github.com/klynxlx/IS-32_appWEB-LinnykKatya-FIOT-2025-" target="_blank">посилання на репозиторій веб застосунка</a><br>
-        <a href="https://klynxlx.github.io/web_labs/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
+        <a href="https://klynxlx.github.io/IS-32_appWEB-LinnykKatya-FIOT-2025-/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
         <a href="https://github.com/klynxlx/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025" target="_blank">посилання на репозиторій самостійної роботи</a><br>
         <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку самостійної роботи</a>
         <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку звітного html-докумсенту</a>

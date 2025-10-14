@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%; /* Вузька ширина контейнера */
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid black;
+        }
+
+        .block {
+            border: 1px solid black;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .block1 {
+            background-color: #FFD700;
+            height: 50px;
+            width: 100%;
+        }
+        .white-box {
+            background-color: #ffffff;
+            height: 30px;
+            width: 100px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 1px solid black;
+        }
+
+        .block2 {
+            background-color: #0000FF; 
+            float: left;
+            width: 100px;
+            height: 300px;
+        }
+
+        .block3 {
+            background-color: #FFFFFF;
+            color: black;
+            float: left;
+            width: 120px;
+            height: 200px;
+            position: relative;
+            margin-right: 20px;
+            margin-top: 30px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+
+        }
+
+        .block4 {
+            background-color: #0000FF;
+            float: left;
+            width: 120px;
+            height: 200px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .block5 {
+            background-color: #FFD700;
+            height: 50px;
+            width: 100%;
+            clear: both;
+        }
+
+        .small-block {
+            background-color: #FF6347; 
+            height: 40px;
+            margin: 5px auto;
+            border: 2px solid black;
+        }
+
+        .small-block-top {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            width: 100%; /* Збільшуємо до ширини блоку */
+            margin: 0 auto;
+        }
+        .top-red-block {
+            background-color: #FF6347;
+            height: 40px;
+            width: 260px;
+            margin: 10px auto;
+            margin-right: 20px;
+            margin-left: 120px;
+            border: 2px solid black;
+        }
+
+        .small-block-bottom {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            width: 80%; /* Стандартна ширина */
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block block1">
+            <div class="white-box"></div> 
+            1
+        </div>
+        <div class="block block2">2</div>
+        <div class = "top-red-block"></div>
+        
+        <div class="block block3">
+            
+            <div class="small-block small-block-bottom"></div>
+            3
+        </div>
+        <div class="block block4">4</div>
+        <div class="block block5">5</div>
+    </div>
+</body>
+</html>

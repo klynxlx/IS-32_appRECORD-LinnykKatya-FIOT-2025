@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 100%; /* Ширина контейнера адаптується до вікна */
+    
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+table {
+    width: 100%; /* Таблиця займає всю ширину контейнера */
+    border-collapse: separate;
+    border-spacing: 1%; /* Відстані між комірками у відсотках */
+}
+
+td {
+    border: 1px solid black;
+    padding: 1%; /* Внутрішні відступи у відсотках */
+}
+
+.header {
+    background-color: yellow;
+    height: 10vh; /* Висота залежить від висоти вікна браузера */
+    position: relative;
+}
+
+.white-box {
+    width: 20%; /* Ширина у відсотках від ширини батьківського елемента */
+    height: 40%;
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    border: 1px solid black;
+}
+
+.left {
+    background-color: blue;
+    width: 15%; /* Ширина бокової панелі залежить від таблиці */
+}
+
+.top {
+    background-color: red;
+    height: 15vh; /* Адаптивна висота */
+}
+
+.main {
+    background-color: white;
+    height: 30vh; /* Адаптивна висота */
+}
+
+.sidebar {
+    background-color: blue;
+    width: 15%; /* Адаптивна ширина */
+}
+
+.footer {
+    background-color: yellow;
+    height: 7vh; /* Адаптивна висота */
+}
+
+table td {
+    text-align: center;
+    vertical-align: middle;
+}

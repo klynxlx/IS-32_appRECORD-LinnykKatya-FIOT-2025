@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 320px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 10px; /*  відстані між комірками */
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px; /* Внутрішні відступи */
+}
+
+.header {
+    background-color: rgb(255, 187, 0);
+    height: 50px;
+    position: relative;
+}
+
+.white-box {
+    width: 80px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+}
+
+.left {
+    background-color: blue;
+    width: 80px;
+}
+
+.top {
+    background-color: red;
+    height: 50px;
+}
+
+.main {
+    background-color: white;
+    height: 150px;
+}
+
+.sidebar {
+    background-color: blue;
+    width: 80px;
+}
+
+.footer {
+    background-color: rgb(255, 187, 0);
+    height: 40px;
+}
+
+table td {
+    text-align: center;
+    vertical-align: middle;
+}
+

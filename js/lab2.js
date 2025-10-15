@@ -5,11 +5,11 @@ function showDetails() {
 <p><strong>Мета:</strong> придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів.</p>
 <p><strong>Місце розташування:</strong></p>
 <ul>
-    <li><a href="https://github.com/klynxlx/linnyk_lab2">Посилання на репозиторій лабораторної роботи №2</a></li>
-    <li><a href="https://klynxlx.github.io/linnyk_lab2/">Посилання на живу сторінку лабораторної роботи №2</a></li>
-    <li><a href="https://github.com/klynxlx/linnyk_independent2">Посилання на репозиторій самостійної роботи №2</a></li>
-    <li><a href="https://klynxlx.github.io/linnyk_independent2/">Посилання на живу сторінку самостійної роботи №2</a></li>
-    <li><a href="https://github.com/klynxlx/zvit-document">Посилання на репозиторій звітного HTML документу</a></li>
+      <a href="https://github.com/klynxlx/IS-32_appWEB-LinnykKatya-FIOT-2025-" target="_blank">посилання на репозиторій веб застосунка</a><br>
+        <a href="https://klynxlx.github.io/IS-32_appWEB-LinnykKatya-FIOT-2025-/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
+        <a href="https://github.com/klynxlx/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025" target="_blank">посилання на репозиторій самостійної роботи</a><br>
+        <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку самостійної роботи</a>
+        <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку звітного html-докумсенту</a>
 </ul> `
 ;
 

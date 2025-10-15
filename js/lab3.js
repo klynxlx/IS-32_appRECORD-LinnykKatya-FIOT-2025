@@ -7,16 +7,11 @@ function showDetails3() {
 </p>
 <p><strong>Місце розташування:</strong></p>
 <ul>
-    
-    <li>Посилання на живу сторінку лабораторної роботи №3: 
-        <a href="https://klynxlx.github.io/linnyk_lab2/">https://klynxlx.github.io/linnyk_lab2/</a>
-    </li>
-    <li>Посилання на репозиторій звітного HTML документу: 
-        <a href="https://github.com/klynxlx/zvit-document">https://github.com/klynxlx/zvit-document</a>
-    </li>
-    <li>Посилання на живу сторінку звітного HTML документу: 
-        <a href="https://klynxlx.github.io/zvit-document/">https://klynxlx.github.io/zvit-document/</a>
-    </li>
+        <a href="https://github.com/klynxlx/IS-32_appWEB-LinnykKatya-FIOT-2025-" target="_blank">посилання на репозиторій веб застосунка</a><br>
+        <a href="https://klynxlx.github.io/IS-32_appWEB-LinnykKatya-FIOT-2025-/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
+        <a href="https://github.com/klynxlx/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025" target="_blank">посилання на репозиторій самостійної роботи</a><br>
+        <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку самостійної роботи</a>
+        <a href="https://klynxlx.github.io/IS-32_INDEPENDENT-LinnykKatya-FIOT-2025/" target="_blank">посилання на живу сторінку звітного html-докумсенту</a>
 </ul>`
 ;
 }

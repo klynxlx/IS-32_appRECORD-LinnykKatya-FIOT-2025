@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизація користувача</title>
+</head>
+<body>
+    <script>
+        // Ініціалізуємо користувачів та їхні паролі
+        const users = {
+            "User1": "password1",
+            "User2": "password2",
+            "User3": "password3"
+        };
+
+        // Запитуємо логін у користувача
+        const login = prompt("Введіть свій логін (User1, User2, User3):");
+        console.log(`Введений логін: ${login}`);
+
+        // Перевірка наявності користувача
+        if (users.hasOwnProperty(login)) {
+            // Якщо користувач існує, запитуємо пароль
+            const password = prompt("Введіть пароль:");
+
+            if (password === users[login]) {
+                alert(`Hello, ${login}`);
+            } else {
+                alert("Невірний пароль!");
+            }
+        } else {
+            alert("Користувача не знайдено!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+
+<h1>Product Details</h1>
+
+<!-- Форма для введення ID товару -->
+<label for="productIdInput">Enter Product ID:</label>
+<input type="number" id="productIdInput" min="1">
+<button onclick="fetchProductDetails()">Get Product Details</button>
+
+<!-- Вивід результатів -->
+<div id="result"></div>
+
+<script>
+    // Статичний масив з даними про товари
+    const products = [
+        { id: 1, name: "Laptop", price: 1200 },
+        { id: 2, name: "Smartphone", price: 800 },
+        { id: 3, name: "Tablet", price: 500 },
+        { id: 4, name: "Smartwatch", price: 250 }
+    ];
+
+    // Функція для отримання деталей товару
+    function getProductDetails(productId, successCallback, errorCallback) {
+        const product = products.find(item => item.id === productId);
+
+        if (product) {
+            successCallback(product);
+        } else {
+            errorCallback("Product not found");
+        }
+    }
+
+    // Колбек-функція для успішного отримання даних
+    function successCallback(product) {
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<p>Product Name: ${product.name}</p>
+                               <p>Price: $${product.price}</p>`;
+    }
+
+    // Колбек-функція для помилки
+    function errorCallback(errorMessage) {
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<p style="color: red;">Error: ${errorMessage}</p>`;
+    }
+
+    // Функція для обробки введеного ID товару та виклику getProductDetails
+    function fetchProductDetails() {
+        const productId = parseInt(document.getElementById("productIdInput").value);
+
+        if (isNaN(productId) || productId < 1) {
+            errorCallback("Please enter a valid product ID.");
+        } else {
+            getProductDetails(productId, successCallback, errorCallback);
+        }
+    }
+</script>
+
+</body>
+</html>

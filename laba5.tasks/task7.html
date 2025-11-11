@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+
+<h2>Array Operations</h2>
+
+<form id="arrayForm">
+    <label for="arraySize">Enter Array Size:</label>
+    <input type="number" id="arraySize" name="arraySize" required min="1">
+    <br><br>
+
+    <button type="button" onclick="generateAndProcessArray()">Generate and Process Array</button>
+</form>
+
+<p id="originalArray"></p>
+<p id="evenIndexSum"></p>
+<p id="maxElement"></p>
+<p id="minOddIndexElement"></p>
+<p id="sortedArray"></p>
+
+<script>
+    // Генерація масиву з випадкових чисел заданого розміру
+    function generateArray(size) {
+        const array = [];
+        for (let i = 0; i < size; i++) {
+            array.push(Math.floor(Math.random() * 100)); // Генерація чисел від 0 до 99
+        }
+        return array;
+    }
+
+    // Пошук суми елементів з парними індексами
+    function sumEvenIndices(array) {
+        return array.reduce((sum, value, index) => (index % 2 === 0 ? sum + value : sum), 0);
+    }
+
+    // Пошук максимального елемента і його індексу
+    function findMaxElement(array) {
+        let maxElement = array[0];
+        let maxIndex = 0;
+        array.forEach((value, index) => {
+            if (value > maxElement) {
+                maxElement = value;
+                maxIndex = index;
+            }
+        });
+        return { maxElement, maxIndex };
+    }
+
+    // Пошук мінімального елемента та його індексу серед елементів з непарними індексами
+    function findMinOddIndexElement(array) {
+        let minElement = null;
+        let minIndex = -1;
+        array.forEach((value, index) => {
+            if (index % 2 !== 0 && (minElement === null || value < minElement)) {
+                minElement = value;
+                minIndex = index;
+            }
+        });
+        return { minElement, minIndex };
+    }
+
+    // Упорядкування масиву за зростанням
+    function sortArrayAscending(array) {
+        return [...array].sort((a, b) => a - b);
+    }
+
+    // Функція для генерації та обробки масиву
+    function generateAndProcessArray() {
+        const size = parseInt(document.getElementById('arraySize').value);
+        const array = generateArray(size);
+
+        // Відображення вхідного масиву
+        document.getElementById('originalArray').innerText = `Original Array: [${array.join(', ')}]`;
+
+        // Обчислення суми елементів з парними індексами
+        const evenIndexSum = sumEvenIndices(array);
+        document.getElementById('evenIndexSum').innerText = `Sum of Elements at Even Indices: ${evenIndexSum}`;
+
+        // Пошук максимального елемента і його індексу
+        const { maxElement, maxIndex } = findMaxElement(array);
+        document.getElementById('maxElement').innerText = `Max Element: ${maxElement} at Index: ${maxIndex}`;
+
+        // Пошук мінімального елемента і його індексу серед елементів з непарними індексами
+        const { minElement, minIndex } = findMinOddIndexElement(array);
+        document.getElementById('minOddIndexElement').innerText = 
+            `Min Element at Odd Indices: ${minElement} at Index: ${minIndex}`;
+
+        // Упорядкування масиву за зростанням і його відображення
+        const sortedArray = sortArrayAscending(array);
+        document.getElementById('sortedArray').innerText = `Sorted Array: [${sortedArray.join(', ')}]`;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Робота з двовимірним масивом</title>
+</head>
+<body>
+    <script>
+        // Функція для генерації випадкового числа від -10 до 10
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Ініціалізація двовимірного масиву 3x4 випадковими числами
+        const rows = 3;
+        const cols = 4;
+        const array = [];
+
+        for (let i = 0; i < rows; i++) {
+            const row = [];
+            for (let j = 0; j < cols; j++) {
+                row.push(getRandomInt(-10, 10));
+            }
+            array.push(row);
+        }
+
+        console.log("Початковий двовимірний масив:");
+        console.log(array);
+
+        // Витягуємо перший та останній елементи масиву
+        const firstElement = array[0][0];
+        const lastElement = array[rows - 1][cols - 1];
+
+        console.log(`Перший елемент: ${firstElement}`);
+        console.log(`Останній елемент: ${lastElement}`);
+
+        // Перетворимо двовимірний масив у одномірний для вставки
+        const flatArray = array.flat();
+
+        // Вставимо число 25 після другого елемента
+        flatArray.splice(2, 0, 25);
+
+        console.log("Масив після вставки 25:");
+        console.log(flatArray);
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Management</title>
+</head>
+<body>
+
+<h1>Warehouse Management</h1>
+<p>Введіть назву товару для додавання або видалення та натисніть відповідну кнопку. Результати дій будуть відображатися в консолі.</p>
+
+<label for="item-input">Назва товару:</label>
+<input type="text" id="item-input" placeholder="Введіть товар">
+<button onclick="addItem()">Додати товар</button>
+<button onclick="removeItem()">Видалити товар</button>
+
+<script>
+    // Конструктор Storage для управління складом товарів
+    function Storage(items) {
+        this.items = [...items]; // Створюємо копію масиву
+        
+        // Метод для отримання масиву товарів
+        this.getItems = () => this.items;
+        
+        // Метод для додавання нового товару
+        this.addItem = (item) => {
+            this.items.push(item);
+            console.log(`Item "${item}" added.`);
+            this.displayItems();
+        };
+        
+        // Метод для видалення товару
+        this.removeItem = (item) => {
+            const itemIndex = this.items.indexOf(item);
+            if (itemIndex !== -1) {
+                this.items.splice(itemIndex, 1);
+                console.log(`Item "${item}" removed.`);
+            } else {
+                console.log(`Item "${item}" not found.`);
+            }
+            this.displayItems();
+        };
+
+        // Метод для відображення товарів у консолі
+        this.displayItems = () => {
+            console.log("Current items in storage:", this.items);
+        };
+    }
+
+    // Початковий масив товарів
+    const arr = ["apple", "banana", "mango"];
+    const storage = new Storage(arr);
+
+    // Виводимо початковий список товарів
+    storage.displayItems();
+
+    // Функції для додавання і видалення товару через інтерфейс
+    function addItem() {
+        const item = document.getElementById("item-input").value.trim();
+        if (item) {
+            storage.addItem(item);
+            document.getElementById("item-input").value = ""; // Очищуємо поле
+        } else {
+            console.log("Please enter an item name to add.");
+        }
+    }
+
+    function removeItem() {
+        const item = document.getElementById("item-input").value.trim();
+        if (item) {
+            storage.removeItem(item);
+            document.getElementById("item-input").value = ""; // Очищуємо поле
+        } else {
+            console.log("Please enter an item name to remove.");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Discounts</title>
+</head>
+<body>
+
+<h1>Medicines with Discounts</h1>
+<p>Open the console to see the result.</p>
+
+<script>
+    const medicines = [
+        { name: "Noshpa", price: 170 },
+        { name: "Analgin", price: 55 },
+        { name: "Quanil", price: 310 },
+        { name: "Alphacholine", price: 390 },
+    ];
+
+    // Функція для застосування знижки
+    const applyDiscount = (items) => {
+        return items.map((item, index) => {
+            // Застосовуємо знижку, якщо ціна більше 300 грн
+            const discountedPrice = item.price > 300 ? item.price * 0.7 : item.price;
+
+            // Повертаємо новий об'єкт з ідентифікатором та оновленою ціною
+            return { id: index + 1, name: item.name, price: discountedPrice.toFixed(2) };
+        });
+    };
+
+    // Викликаємо функцію та виводимо результат у консоль
+    const discountedMedicines = applyDiscount(medicines);
+    console.log(discountedMedicines);
+</script>
+
+</body>
+</html>

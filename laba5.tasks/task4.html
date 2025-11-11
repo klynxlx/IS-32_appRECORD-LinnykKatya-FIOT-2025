@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Message</title>
+</head>
+<body>
+
+<h2>Shipping Cost Calculator</h2>
+
+<form id="shippingForm">
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" required>
+    <br><br>
+
+    <label for="price">Product Price:</label>
+    <input type="number" id="price" name="price" required>
+    <br><br>
+
+    <label for="deliveryFee">Delivery Fee:</label>
+    <input type="number" id="deliveryFee" name="deliveryFee" required>
+    <br><br>
+
+    <button type="button" onclick="displayShippingMessage()">Calculate Shipping</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+    function getShippingMessage(country, price, deliveryFee) {
+        const totalPrice = price + deliveryFee;
+        return `Shipping to ${country} will cost ${totalPrice} credits`;
+    }
+
+    function displayShippingMessage() {
+        const country = document.getElementById('country').value;
+        const price = parseFloat(document.getElementById('price').value);
+        const deliveryFee = parseFloat(document.getElementById('deliveryFee').value);
+        
+        const message = getShippingMessage(country, price, deliveryFee);
+        document.getElementById('message').innerText = message;
+    }
+</script>
+
+</body>
+</html>

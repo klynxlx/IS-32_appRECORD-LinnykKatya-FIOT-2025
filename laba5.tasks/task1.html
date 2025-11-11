@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Чверть години</title>
+</head>
+<body>
+    <script>
+        // Запитати час у користувача
+        const hour = prompt("Введіть час у форматі год:хв (наприклад, 10:30):");
+
+        // Вивести введений час у консоль
+        console.log(`Введений час: ${hour}`);
+
+        // Розділити введене значення на години та хвилини
+        const [h, m] = hour.split(":").map(Number);
+
+        if (isNaN(h) || isNaN(m) || h < 0 || h > 23 || m < 0 || m > 59) {
+            alert("Невірний формат часу!");
+        } else {
+            let quarter = "";
+
+            if (m >= 0 && m <= 14) {
+                quarter = "Перша чверть години";
+            } else if (m >= 15 && m <= 29) {
+                quarter = "Друга чверть години";
+            } else if (m >= 30 && m <= 44) {
+                quarter = "Третя чверть години";
+            } else {
+                quarter = "Четверта чверть години";
+            }
+
+            alert(quarter);
+        }
+    </script>
+</body>
+</html>

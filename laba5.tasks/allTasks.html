@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 4</title>
+    <style>
+        /* Основні стилі меню */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav > ul {
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav li a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #555;
+        }
+
+        /* Підменю */
+        nav li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            min-width: 180px;
+            z-index: 1000;
+        }
+
+        nav li:hover > ul {
+            display: block;
+        }
+
+        nav li ul li a {
+            padding: 10px;
+        }
+
+        nav li ul li a:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Лабораторна робота 4</h1>
+
+<nav id="menu"></nav>
+
+<script>
+    // Статичний масив з меню та завданнями
+    const menuData = [
+        {
+            title: "Лабораторна робота 4",
+            submenu: [
+                { title: "Завдання 1", link: "task1.html" },
+                { title: "Завдання 2", link: "task2.html" },
+                { title: "Завдання 3", link: "task3.html" },
+                { title: "Завдання 4", link: "task4.html" },
+                { title: "Завдання 5", link: "task5.html" },
+                { title: "Завдання 6", link: "task6.html" },
+                { title: "Завдання 7", link: "task7.html" },
+                { title: "Завдання 8", link: "task8.html" },
+               
+            ]
+        }
+    ];
+
+    // Функція для створення меню
+    function createMenu(menuArray) {
+        const ul = document.createElement("ul");
+
+        menuArray.forEach(item => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = item.title;
+            a.href = item.link ? item.link : "#"; // якщо немає link, ставимо #
+            li.appendChild(a);
+
+            if (item.submenu) {
+                const subUl = createMenu(item.submenu);
+                li.appendChild(subUl);
+            }
+
+            ul.appendChild(li);
+        });
+
+        return ul;
+    }
+
+    // Додаємо меню на сторінку
+    const menuContainer = document.getElementById("menu");
+    menuContainer.appendChild(createMenu(menuData));
+</script>
+
+</body>
+</html>

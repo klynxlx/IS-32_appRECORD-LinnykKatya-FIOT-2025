@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concerts</title>
+</head>
+<body>
+
+<h1>Upcoming Concert Cities</h1>
+<p>Open the console to see the result.</p>
+
+<script>
+    const concerts = {
+        Київ: new Date("2020-04-01"),
+        Умань: new Date("2025-07-02"),
+        Вінниця: new Date("2020-04-21"),
+        Одеса: new Date("2025-03-15"),
+        Хмельницький: new Date("2020-04-18"),
+        Харків: new Date("2025-07-10"),
+    };
+
+    // Отримуємо сьогоднішню дату
+    const today = new Date();
+
+    // Формуємо масив з міст, де концерти ще не відбулися, та сортуємо його
+    const upcomingConcertCities = Object.keys(concerts)
+        .filter(city => concerts[city] > today) // Залишаємо тільки дати, що більші за сьогоднішню
+        .sort((a, b) => concerts[a] - concerts[b]); // Сортуємо міста за датою концерту
+
+    // Виводимо результат у консоль
+    console.log(upcomingConcertCities); // Очікуваний результат: ["Одеса", "Умань", "Харків"]
+</script>
+
+</body>
+</html>

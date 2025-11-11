@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Tags Counter</title>
+</head>
+<body>
+
+<h1>Tweet Tags Counter</h1>
+<p>Відкрийте консоль, щоб побачити результат підрахунку тегів.</p>
+
+<script>
+    // Масив об'єктів із твітиками
+    const tweets = [
+        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+        { id: "001", likes: 2, tags: ["html", "css"] },
+        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+        { id: "003", likes: 8, tags: ["css", "react"] },
+        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+    ];
+
+    // Функція для підрахунку кількості тегів
+    function countTags(tweetsArray) {
+        return tweetsArray
+            .flatMap(tweet => tweet.tags) // Об'єднуємо всі теги в один масив
+            .reduce((tagCount, tag) => {
+                // Збільшуємо кількість для кожного тегу
+                tagCount[tag] = (tagCount[tag] || 0) + 1;
+                return tagCount;
+            }, {}); // Початкове значення для reduce - порожній об'єкт
+    }
+
+    // Викликаємо функцію та виводимо результат у консоль
+    const tagCounts = countTags(tweets);
+    console.log("Tag counts:", tagCounts);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>День тижня</title>
+</head>
+<body>
+    <script>
+        // Запитуємо день у користувача
+        const day = prompt("Введіть номер дня тижня (1-7):");
+
+        let finish;
+
+        // Використовуємо switch-case для визначення дня
+        switch (day) {
+            case '1':
+                finish = "Понеділок";
+                break;
+            case '2':
+                finish = "Вівторок";
+                break;
+            case '3':
+                finish = "Середа";
+                break;
+            case '4':
+                finish = "Четвер";
+                break;
+            case '5':
+                finish = "П’ятниця";
+                break;
+            case '6':
+                finish = "Субота";
+                break;
+            case '7':
+                finish = "Неділя";
+                break;
+            default:
+                finish = "Невірне значення!";
+        }
+
+        // Виводимо результат у консоль
+        console.log(`Обраний день: ${finish}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Завдання 9</h1>
+        <p>Background color: <span class="color">-</span></p>
+        <button type="button" class="change-color">Change color</button>
+    </div>
+
+    <script>
+        // Функція для генерації випадкового кольору в hex-форматі
+        function getRandomHexColor() {
+            return `#${Math.floor(Math.random() * 16777215)
+                .toString(16)
+                .padStart(6, 0)}`;
+        }
+
+        // Отримуємо елементи кнопки та span
+        const changeColorButton = document.querySelector('.change-color');
+        const colorSpan = document.querySelector('.color');
+
+        // Додаємо обробник події на кнопку
+        changeColorButton.addEventListener('click', () => {
+            // Генеруємо випадковий колір
+            const randomColor = getRandomHexColor();
+
+            // Змінюємо колір фону body на rgb-формат
+            document.body.style.backgroundColor = randomColor;
+
+            // Виводимо hex-колір у span
+            colorSpan.textContent = randomColor;
+        });
+    </script>
+</body>
+</html>

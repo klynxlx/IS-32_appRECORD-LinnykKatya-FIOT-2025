@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Змінення розміру квадрата</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Завдання 4</h1>
+        <div class="fixed-container">
+            <div id="square"></div>
+        </div>
+        <button id="decreaseButton">Зменшити</button>
+        <button id="increaseButton">Збільшити</button>
+    </div>
+    <script>
+        const square = document.getElementById('square');
+        const decreaseButton = document.getElementById('decreaseButton');
+        const increaseButton = document.getElementById('increaseButton');
+
+        let squareSize = 100; // Початковий розмір квадрата
+
+        const updateSquareSize = () => {
+            square.style.width = squareSize + 'px';
+            square.style.height = squareSize + 'px';
+        };
+
+        decreaseButton.addEventListener('click', () => {
+            squareSize = Math.max(15, squareSize - 15); // Мінімальний розмір - 15 пікселів
+            updateSquareSize();
+        });
+
+        increaseButton.addEventListener('click', () => {
+            squareSize += 15;
+            updateSquareSize();
+        });
+
+        // Встановлюємо початковий розмір квадрата
+        updateSquareSize();
+    </script>
+</body>
+</html>
